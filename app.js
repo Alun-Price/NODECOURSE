@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -8,6 +9,7 @@ const shopRoutes = require('./routes/shop.js');
 const fourOhFourRoutes = require('./routes/404.js');
 
 app.use(bodyParser.urlencoded());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
