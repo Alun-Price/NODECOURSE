@@ -1,36 +1,26 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title #{pageTitle}
-        link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap", rel="stylesheet")
-        link(rel="stylesheet", href="/css/main.css")
-    body 
-        header.main-header 
-            nav.main-header__nav 
-                ul.main-header__item-list 
-                    li.main-header__item 
-                        a(href="/") Shop
-                    li.main-header__item 
-                        a.active(href="#") Add Product 
-        main 
-            div.card
-                .star.top 
-                    img(src="https://svgshare.com/i/YdG.svg")
-                .star.top-rg
-                    img(src="https://svgshare.com/i/Ydc.svg")
+extends layouts/main-layout.pug
+
+block styles 
+    link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap", rel="stylesheet")
+
+block content
+    main 
+        div.card
+            .star.top 
+                img(src="https://svgshare.com/i/YdG.svg")
+            .star.top-rg
+                img(src="https://svgshare.com/i/Ydc.svg")
+            
+            .star.bottom-lf
+                img(src="https://svgshare.com/i/YdG.svg")
+            
+            .star.bottom-rg
+                img(src="https://svgshare.com/i/Ydo.svg")
+            
+            .container.flex
+                .error
+                    span 404 error
                 
-                .star.bottom-lf
-                    img(src="https://svgshare.com/i/YdG.svg")
-                
-                .star.bottom-rg
-                    img(src="https://svgshare.com/i/Ydo.svg")
-                
-                .container.flex
-                    .error
-                        span 404 error
-                    
-                    .img
-                        img(src="https://svgshare.com/i/Ye7.svg")
+                .img
+                    img(src="https://svgshare.com/i/Ye7.svg")
+
