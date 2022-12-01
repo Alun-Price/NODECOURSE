@@ -2,28 +2,19 @@ const path = require('path');
 
 const express = require('express');
 
-const rootDir = require('../util/path.js');
+const productsController = require('../controllers/products.js');
+// essentially imports the products.js controller
 
 const router = express.Router();
 
-const products = [];
-
 // /admin/add-products => GET
-router.get('/add-product', (req, res, next) => {
-  // res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
-  res.render('add-product', {
-    pageTitle: 'Add Product',
-    path: '/admin/add-product',
-  });
-});
+router.get('/add-product', productsController.getAddProduct);
+// refers to the getAddProduct fn in the controller, not call it
+// hence no () at the end of the fn
+// saying just store the fn until the route gets called
 
 // /admin/products => POST
-router.post('/add-product', (req, res, next) => {
-  // console.log(req.body);
-  products.push({ title: req.body.title });
-  res.redirect('/');
-});
+router.post('/add-product', productsController.postAddProduct);
 
 //module.exports = router;
-exports.routes = router;
-exports.products = products;
+module.exports = router;
