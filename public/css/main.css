@@ -62,19 +62,27 @@ main {
 }
 
 .form-control label,
-.form-control input {
+.form-control input,
+.form-control textarea {
   display: block;
   width: 100%;
 }
 
-.form-control label {
+.form-control label,
+.form-control textarea {
   color: rgb(118, 194, 130);
 }
 
-.form-control input {
+.form-control input,
+.form-control textarea {
   border: 1px solid rgb(118, 194, 130);
   font: inherit;
   border-radius: 2px;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  outline-color: rgb(113, 174, 122);
 }
 
 button {
