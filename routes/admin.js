@@ -2,19 +2,19 @@ const path = require('path');
 
 const express = require('express');
 
-const productsController = require('../controllers/products.js');
+const adminController = require('../controllers/admin.js');
 // essentially imports the products.js controller
 
 const router = express.Router();
 
 // /admin/add-products => GET
-router.get('/add-product', productsController.getAddProduct);
-// refers to the getAddProduct fn in the controller, not call it
-// hence no () at the end of the fn
-// saying just store the fn until the route gets called
+router.get('/add-product', adminController.getAddProduct);
+
+// /admin/products => GET
+router.get('/products', adminController.getProducts);
 
 // /admin/products => POST
-router.post('/add-product', productsController.postAddProduct);
+router.post('/add-product', adminController.postAddProduct);
 
 //module.exports = router;
 module.exports = router;
