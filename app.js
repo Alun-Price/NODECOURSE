@@ -3,6 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const sequelize = require('./util/database');
+const Product = require('./models/product');
+const User = require('./models/user');
+
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -20,8 +23,11 @@ app.use(shopRoutes);
 
 app.use(fourOhFourRoutes);
 
+Product.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
+User.hasMany(Product);
+
 sequelize
-  .sync()
+  .sync({ force: true })
   .then(result => {
     // console.log(result);
     app.listen(3000);
