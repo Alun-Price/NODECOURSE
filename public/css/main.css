@@ -288,6 +288,14 @@ button:active {
   text-align: center;
 }
 
+.image {
+  height: 20rem;
+}
+
+.image img {
+  height: 100%;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
