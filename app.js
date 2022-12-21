@@ -54,7 +54,15 @@ sequelize
     return Promise.resolve(user);
   })
   .then(user => {
+    return user.getCart().then(cart => {
+      if (!cart) {
+        return user.createCart();
+      }
+      return cart;
+    });
     // console.log(user);
+  })
+  .then(cart => {
     app.listen(3000);
   })
   .catch(err => {
